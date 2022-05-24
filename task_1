@@ -24,3 +24,11 @@ Lineage::Lineage(int day, int mon, int year)
    cout << ctime(&cur_time) << endl;
    cout << "Вы прожили: " << difftime(cur_time, bd_time)/3600/24 << " дней." << endl;
 }
+
+int main() {
+    int d, m, y;
+    
+    cin >> d >> m >> y;
+    
+    Lineage(d, m, y); 
+}
