@@ -1,0 +1,26 @@
+#include <iostream>
+#include <string>
+#include <sstream>
+using namespace std;
+class Lineage
+{
+public:
+   Lineage(int day, int mon, int year);
+};
+ 
+Lineage::Lineage(int day, int mon, int year)
+{
+   time_t bd_time, cur_time;
+   tm birthday = {0};
+   
+   birthday.tm_mday = day;
+   birthday.tm_mon = mon - 1;
+   birthday.tm_year = year - 1900;
+   
+   bd_time = mktime(&birthday);
+   cur_time = time(NULL);
+   
+   cout << ctime(&bd_time) << endl;
+   cout << ctime(&cur_time) << endl;
+   cout << "Вы прожили: " << difftime(cur_time, bd_time)/3600/24 << " дней." << endl;
+}
