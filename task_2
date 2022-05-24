@@ -1,0 +1,63 @@
+#include <iostream>
+#include <string>
+#include <sstream>
+#include <ctime>
+using namespace std;
+
+void Quas() {
+    int number1;
+    int number2;
+    string operation;
+    
+    cout << "1ое число: ";
+    cin >> number1;
+    cout << endl;
+    
+    cout << "2ое число: ";
+    cin >> number2;
+    cout << endl;
+    
+    cout << "Операции (+, -, /, *): ";
+    cin >> operation;
+    cout << endl;
+    
+    
+    
+    try
+        {
+            if (number2 == 0) {
+                throw 0;
+            } else {
+                if (operation == "+") {
+                    cout << number1 + number2 << endl;
+                } else if (operation == "-") {
+                    cout << number1 - number2 << endl;
+                } else if (operation == "*") {
+                    cout << number1 * number2 << endl;
+                } else if (operation == "/") {
+                    cout << number1 / number2 << endl;
+                }
+            }
+            
+        }
+        catch (int number2)
+        {
+            
+            cerr << "На ноль делить нельзя" << '\n';
+            
+        }
+        catch (const std::string &str)
+        {
+            std::cerr << "Где-то ошибочка, введите число!!!!" << '\n';
+        }
+    
+    
+    
+    
+    
+}
+ 
+int main() {    
+        Quas();
+    
+}
